@@ -78,8 +78,6 @@ void GameboyEmu::initEmu()
 
 }
 
-using namespace std::chrono;
-
 void GameboyEmu::loop()
 {
 
