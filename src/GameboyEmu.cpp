@@ -78,9 +78,6 @@ void GameboyEmu::initEmu()
 
 }
 
-#include <iostream>
-#include <chrono>
-
 using namespace std::chrono;
 
 void GameboyEmu::loop()
@@ -93,7 +90,6 @@ void GameboyEmu::loop()
 
     while (Running)
     {
-        auto start = high_resolution_clock::now();
 
         Uint64 frameStart = SDL_GetTicks();
         SDL_Event Event;
@@ -122,15 +118,6 @@ void GameboyEmu::loop()
         {
             SDL_Delay(TimePerFrame - frameEnd + frameStart);
         }
-
-
-        auto stop = high_resolution_clock::now();
-
-        auto duration = duration_cast<milliseconds>(stop - start);
-
-        // To get the value of duration use the count()
-        // member function on the duration object
-        std::cout << duration.count() << std::endl;
     }
 }
 void GameboyEmu::render()

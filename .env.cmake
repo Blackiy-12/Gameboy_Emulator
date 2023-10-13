@@ -1,0 +1,1 @@
+set(SDL2_PATH YOUR_SDL_PATH)
